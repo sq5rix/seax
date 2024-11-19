@@ -1,3 +1,3 @@
-module github.com/sq5rix/seax
+module github.com/seax
 
-go 1.23.2
+go 1.20
