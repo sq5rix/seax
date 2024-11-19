@@ -19,8 +19,9 @@ const (
 
 type config struct {
 	instanceURL string
-	format     string
-	timeout    time.Duration
+	jsonOutput  bool
+	timeout     time.Duration
+	format      string
 }
 
 func main() {
@@ -59,7 +60,7 @@ func parseFlags() (config, error) {
 	cfg := config{}
 	
 	flag.StringVar(&cfg.instanceURL, "url", defaultInstanceURL, "SearXNG instance URL")
-	flag.StringVar(&cfg.format, "format", "json", "Output format (json or text)")
+	flag.StringVar(&cfg.format, "format", "text", "Output format (json or text)")
 	timeout := flag.Duration("timeout", defaultTimeout, "Search timeout duration")
 	
 	flag.Parse()
